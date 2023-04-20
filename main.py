@@ -1,12 +1,11 @@
-# this file is used for one line import
 from imports import *
-import ctypes
-myappid = r'assets\images\heart.png' # arbitrary string
+
+myappid = r'assets\images\heart.png' 
 pygame.init()
 pygame.mixer.init()
 ghostFight = pygame.mixer.Sound(r"assets\other\ghostFight.mp3")
 determination = pygame.mixer.Sound(r"assets\other\Undertale OST_ 011 - Determination.mp3")
-ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 pygame.display.set_caption("Undertale: Shades of Darkness")
 wave1,wave2,wave3,wave4 = False,False,False,False
 entities = []
@@ -28,7 +27,7 @@ def end(ended):
         ghostFight.stop()
         determination.stop()
         determination.play(loops=-1)
-    print('ended')
+
     return True
 
 class Text():
@@ -125,8 +124,8 @@ Gengar = Entity(5,[500-(220/2),350-(220/2)],r'assets\images\gengar_fixed.png',[2
 entities.append(Gengar)
 pygame.display.set_icon(Player.getImage())
 
-ghostFight.set_volume(.06)
-determination.set_volume(0.022) 
+ghostFight.set_volume(0.06)
+determination.set_volume(0.03) 
 
 
 while True:
@@ -178,7 +177,6 @@ while True:
     timeNow = timeNow//1000
     if timeNow != oldTime:
         oldTime = timeNow
-        print(timeNow)
     for entity in entities:
         entity.blit()
     # game system:

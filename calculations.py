@@ -29,13 +29,10 @@ def angleMath(movingX,movingY,targetX,targetY,movingSpeed):
             y = m**2
             z = y + x 
             fm = sqrt(z)
-            # print(fm,"on m < 0")
             i = 100 * movingSpeed
             b = i/fm
             newm = m * b * 0.01 * -1
             newx = x * b * 0.01 * -1
-            # print(newm,"newm")
-            # print(newx,"newx")
         return [newx,newm]
 
 #def
